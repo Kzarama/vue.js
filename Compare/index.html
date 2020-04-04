@@ -9,15 +9,25 @@
     <body>
         <div id="app">
             <h1>{{titulo}}</h1>
+            <label>Nombre Perro</label>
+            <input type="text" v-model="nuevoPerro"><br>
+            <label>Edad Perro</label>
+            <input type="text" v-model="edadPerro"><br>
+            <label>Raza Perro</label>
+            <input type="text" v-model="nuevaRaza" v-on:keyup.enter="agregarPerro"><br>
+            <button v-on:click="agregarPerro">Agregar</button>
             <ul>
                 <li v-for="fruta of frutas">{{fruta}}</li>
             </ul>
             <ul>
                 <li v-for="perro of perros">Nombre del perro: {{perro.nombre}}<br>
+                    <input type="nummber" v-model.number="perro.edad">
+                    <button @click=perro.edad++>+</button><br>
                     <span v-if="perro.raza !== 'none'">Raza del perro: {{perro.raza}}</span>
                     <span v-else>Raza desconocida</span>
                 </li>
             </ul>
+            <h4>Total edades:{{sumarEdades}}</h4>
         </div>
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
