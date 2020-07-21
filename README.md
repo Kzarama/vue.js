@@ -14,6 +14,40 @@ In the body of the index.html add
 
 ---
 
+## Ton install vue cli
+
+Vue cli is a standard tool for vue development
+
+[official site](https://cli.vuejs.org/)
+
+1. Install node.js for make the automatic building of the vue project, [here](https://nodejs.org/es/download/)
+
+2. Inatall the vue cli
+
+```bash
+npm install -g @vue/cli
+```
+
+3. Create the project with
+
+```bash
+vue create PROJECT_NAME
+```
+
+4. Enter in the folder
+
+```bash
+cd PROJECT_NAME
+```
+
+5. To run the project execute
+
+```bash
+npm run serve
+```
+
+---
+
 ## Properties
 
 ### Declarative rendering
