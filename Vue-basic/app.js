@@ -1,4 +1,4 @@
-Vue.component("CoinDetail", {
+Vue.component("coin-detail", {
   props: ["coin"],
 
   data() {
@@ -11,7 +11,7 @@ Vue.component("CoinDetail", {
   methods: {
     toggleShowPrices() {
       this.showPrices = !this.showPrices;
-      this.$emit("change-color", this.showPrices ? "FF96C8" : "3D3D3D");
+      this.$emit("change-color", this.showPrices ? "78bcbf" : "3D3D3D");
     },
   },
 
@@ -101,12 +101,10 @@ app = new Vue({
     };
   },
 
-  // se ejecuta el crearse
   created() {
     console.log("Created ...");
   },
 
-  // se ejecuta al montar
   mounted() {
     console.log("Mounted ...");
   },
@@ -117,8 +115,6 @@ app = new Vue({
     },
   },
 
-  // ejecuta el watch correspondiente cada vez q se cambia un atributo
-  // cada metodo debe tener el nombre de un atributo
   watch: {
     showPrices(newVal, oldVal) {},
   },
