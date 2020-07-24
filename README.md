@@ -68,6 +68,15 @@ npm run serve
 
 single file component = are the files that the framework allows create for work with the html, js and css in one file, then the cli create a file that the browser can understand
 
+## User interface of vue cli
+
+Generate a browser interface that allows watch the plugins, dependencies, change the configuration and the task.
+To run the user interface run
+
+```bash
+vue ui
+```
+
 ---
 
 ## Properties
