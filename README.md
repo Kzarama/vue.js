@@ -77,6 +77,10 @@ To run the user interface run
 vue ui
 ```
 
+## Install plugins
+
+vue add PLUGIN
+
 ---
 
 ## Properties
