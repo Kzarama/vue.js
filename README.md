@@ -46,6 +46,28 @@ cd PROJECT_NAME
 npm run serve
 ```
 
+## Initial files
+
+- node_modules = folder with the dependencies of node
+- public = folder with the public files of the project, and generate the static code of the project
+  - favicon.ico = vue icon
+  - index.html = html file in where all components are rendered
+- src = folder with the source code
+  - assets = folder with the resources of the project
+    - logo.png = image of vue
+  - components = folder with the components that make up the application
+    - HelloWorld = component example
+  - App.vue = single file component with the component example of the cli
+  - main.js = import vue and declare the instance of vue
+- .browserslistrc = configuration file
+- .eslintrc.js = eslint configurations
+- .gitignore = gitignore of git
+- babel.config.js = babel configurations
+- package.json = commands of the project and modules installed in the project
+- package-lock.json = modules installed and the version of this
+
+single file component = are the files that the framework allows create for work with the html, js and css in one file, then the cli create a file that the browser can understand
+
 ---
 
 ## Properties
