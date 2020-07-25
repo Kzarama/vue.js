@@ -14,7 +14,7 @@
             :alt="asset.name"
             class="w-20 h-20 mr-5"
           />
-          <h1 class="text-5xl">
+          <h1 class="text-5xl text-blue-500">
             {{ asset.name }}
             <small class="sm:mr-2 text-gray-500">{{ asset.symbol }}</small>
           </h1>
@@ -53,9 +53,7 @@
           <button
             @click="toggleConverter"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            {{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}
-          </button>
+          >{{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}</button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -69,26 +67,24 @@
             </label>
           </div>
 
-          <span class="text-xl"
-            >{{ convertResult }}{{ fromUsd ? asset.symbol : 'USD' }}</span
-          >
+          <span class="text-xl">{{ convertResult }} {{ fromUsd ? asset.symbol : 'USD' }}</span>
         </div>
       </div>
 
       <line-chart
         class="my-10"
-        :colors="['orange']"
+        :colors="['#4DA8D7']"
         :min="min"
         :max="max"
         :data="history.map(h => [h.date, parseFloat(h.priceUsd).toFixed(2)])"
       />
 
-      <h3 class="text-xl my-10">Mejores ofertas de cambio</h3>
+      <h3 class="text-xl my-10 text-blue-500">Mejores ofertas de cambio</h3>
       <table>
         <tr
           v-for="m in markets"
           :key="`${m.exchangeId}-${m.priceUsd}`"
-          class="border-b"
+          class="border-b border-gray-700"
         >
           <td>
             <b>{{ m.exchangeId }}</b>
@@ -96,16 +92,16 @@
           <td>{{ m.priceUsd }}</td>
           <td>{{ m.baseSymbol }} / {{ m.quoteSymbol }}</td>
           <td>
-            <px-button
-              :is-loading="m.isLoading || false"
-              v-if="!m.url"
-              @click="getWebSite(m)"
-            >
-              <slot v-if="!m.isLoading">Obtener link</slot>
+            <px-button :is-loading="m.isLoading || false" v-if="!m.url" @click="getWebSite(m)">
+              <slot v-if="!m.isLoading">
+                <h1 class="text-gray-500">Obtener link</h1>
+              </slot>
             </px-button>
-            <a v-else class="hover:underline text-blue-600" target="_blank">{{
+            <a v-else class="hover:underline text-blue-600" target="_blank">
+              {{
               m.url
-            }}</a>
+              }}
+            </a>
           </td>
         </tr>
       </table>

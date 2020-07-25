@@ -1,12 +1,10 @@
 <template>
   <table>
     <thead>
-      <tr class="bg-gray-100 border-b-2 border-gray-400">
+      <tr class="bg-blue-700 border-b-2 border-blue-400">
         <th></th>
         <th :class="{ up: this.sortOrder === 1, down: this.sortOrder === -1 }">
-          <span class="underline cursor-pointer" @click="changeSortOrder"
-            >Ranking</span
-          >
+          <span class="underline cursor-pointer" @click="changeSortOrder">Ranking</span>
         </th>
         <th>Nombre</th>
         <th>Precio</th>
@@ -15,7 +13,7 @@
         <td class="hidden sm:block">
           <input
             type="text"
-            class="bg-gray-100"
+            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-2 border border-blue-500 hover:border-transparent rounded"
             id="filter"
             placeholder="Buscar ..."
             v-model="filter"
@@ -27,7 +25,7 @@
       <tr
         v-for="a in filteredAssets"
         :key="a.id"
-        class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
+        class="border-b border-gray-200 hover:bg-gray-100 hover:bg-blue-900"
       >
         <td>
           <img
@@ -43,26 +41,20 @@
         </td>
         <td>
           <router-link
-            class="hover:underline text-green-600"
+            class="hover:underline text-blue-400"
             :to="{ name: 'coin-detail', params: { id: a.id } }"
-          >
-            {{ a.name }}
-          </router-link>
-          <small class="ml-1 text-gray-500">
-            {{ a.symbol }}
-          </small>
+          >{{ a.name }}</router-link>
+          <small class="ml-1 text-gray-500">{{ a.symbol }}</small>
         </td>
         <td>{{ a.priceUsd | dollar }}</td>
         <td>{{ a.marketCapUsd | dollar }}</td>
         <td
           :class="
             a.changePercent24Hr.includes('-')
-              ? 'text-red-600'
-              : 'text-green-600'
+              ? 'text-red-400'
+              : 'text-green-400'
           "
-        >
-          {{ a.changePercent24Hr | percent }}
-        </td>
+        >{{ a.changePercent24Hr | percent }}</td>
         <td class="hidden sm:block">
           <PxButton v-on:click="goToCoin(a.id)">
             <span>Detalle</span>
@@ -157,5 +149,9 @@ th {
   th {
     padding: 12px;
   }
+}
+
+::placeholder {
+  color: rgb(171, 189, 233);
 }
 </style>

@@ -42,4 +42,22 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+body {
+  background-color: #2c3e50;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #42b983;
+}
+
+* {
+  color: rgb(182, 182, 182);
+}
 </style>
