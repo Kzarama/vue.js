@@ -7,9 +7,8 @@
       <br />Este proyecto es utilizado en el curso de Vue.js Basico
     </p>
 
-    <router-link
-      to="/"
-      class="mt-5 text-xl text-blue-600 hover:underline"
-    >Volver a la pagina de Inicio</router-link>
+    <router-link to="/" class="mt-5 text-xl text-blue-600 hover:underline"
+      >Volver a la pagina de Inicio</router-link
+    >
   </div>
 </template>

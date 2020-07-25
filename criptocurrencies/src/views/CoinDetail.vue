@@ -53,7 +53,9 @@
           <button
             @click="toggleConverter"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >{{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}</button>
+          >
+            {{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}
+          </button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -67,7 +69,9 @@
             </label>
           </div>
 
-          <span class="text-xl">{{ convertResult }} {{ fromUsd ? asset.symbol : 'USD' }}</span>
+          <span class="text-xl"
+            >{{ convertResult }} {{ fromUsd ? asset.symbol : 'USD' }}</span
+          >
         </div>
       </div>
 
@@ -92,15 +96,17 @@
           <td>{{ m.priceUsd }}</td>
           <td>{{ m.baseSymbol }} / {{ m.quoteSymbol }}</td>
           <td>
-            <px-button :is-loading="m.isLoading || false" v-if="!m.url" @click="getWebSite(m)">
+            <px-button
+              :is-loading="m.isLoading || false"
+              v-if="!m.url"
+              @click="getWebSite(m)"
+            >
               <slot v-if="!m.isLoading">
                 <h1 class="text-gray-500">Obtener link</h1>
               </slot>
             </px-button>
             <a v-else class="hover:underline text-blue-600" target="_blank">
-              {{
-              m.url
-              }}
+              {{ m.url }}
             </a>
           </td>
         </tr>
