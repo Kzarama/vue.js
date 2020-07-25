@@ -81,6 +81,18 @@ vue ui
 
 vue add PLUGIN
 
+## Vue router
+
+Is a router for vue, that integrates the vue core to make building single page applications with a vur breeze
+
+To install vue router run
+
+```bash
+npm i -S vue-router
+```
+
+Then create a file called router.js in src, to define the paths
+
 ---
 
 ## Properties
