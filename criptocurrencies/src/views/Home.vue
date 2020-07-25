@@ -1,6 +1,7 @@
 <template>
   <div>
-    <PxAssetsTable :assets="assets" />
+    <bounce-loader :loading="isLoading" :color="'#4DA8D7'" :size="100" />
+    <PxAssetsTable v-if="!isLoading" :assets="assets" />
   </div>
 </template>
 
@@ -15,12 +16,17 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       assets: []
     }
   },
 
   created() {
-    api.getAssets().then(assets => (this.assets = assets))
+    this.isLoading = true
+    api
+      .getAssets()
+      .then(assets => (this.assets = assets))
+      .finally(() => (this.isLoading = false))
   }
 }
 </script>
