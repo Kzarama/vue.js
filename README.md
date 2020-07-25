@@ -95,7 +95,7 @@ Then create a file called router.js in src, to define the paths
 
 ---
 
-## Properties
+## Hooks
 
 ### Declarative rendering
 
