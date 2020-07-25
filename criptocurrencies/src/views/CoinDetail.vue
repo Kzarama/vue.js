@@ -53,7 +53,9 @@
           <button
             @click="toggleConverter"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >{{fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD`}}</button>
+          >
+            {{ fromUsd ? `USD a ${asset.symbol}` : `${asset.symbol} a USD` }}
+          </button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -67,7 +69,9 @@
             </label>
           </div>
 
-          <span class="text-xl">{{convertResult}}{{fromUsd ? asset.symbol : 'USD'}}</span>
+          <span class="text-xl"
+            >{{ convertResult }}{{ fromUsd ? asset.symbol : 'USD' }}</span
+          >
         </div>
       </div>
 
@@ -81,17 +85,27 @@
 
       <h3 class="text-xl my-10">Mejores ofertas de cambio</h3>
       <table>
-        <tr v-for="m in markets" :key="`${m.exchangeId}-${m.priceUsd}`" class="border-b">
+        <tr
+          v-for="m in markets"
+          :key="`${m.exchangeId}-${m.priceUsd}`"
+          class="border-b"
+        >
           <td>
             <b>{{ m.exchangeId }}</b>
           </td>
           <td>{{ m.priceUsd }}</td>
           <td>{{ m.baseSymbol }} / {{ m.quoteSymbol }}</td>
           <td>
-            <px-button :is-loading="m.isLoading || false" v-if="!m.url" @click="getWebSite(m)">
+            <px-button
+              :is-loading="m.isLoading || false"
+              v-if="!m.url"
+              @click="getWebSite(m)"
+            >
               <slot v-if="!m.isLoading">Obtener link</slot>
             </px-button>
-            <a v-else class="hover:underline text-blue-600" target="_blank">{{ m.url }}</a>
+            <a v-else class="hover:underline text-blue-600" target="_blank">{{
+              m.url
+            }}</a>
           </td>
         </tr>
       </table>
