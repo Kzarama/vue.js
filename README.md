@@ -28,45 +28,100 @@ Vue cli is a standard tool for vue development
 npm install -g @vue/cli
 ```
 
-3. Create the project with
+### To create a project
 
-```bash
-vue create PROJECT_NAME
-```
+There are two ways
 
-4. Enter in the folder
+1. Form one
 
-```bash
-cd PROJECT_NAME
-```
+   - Install the init of vue-cli
 
-5. To run the project execute
+   ```bash
+   npm install -g @vue/cli-init
+   ```
 
-```bash
-npm run serve
-```
+   - To create a new project run (TEMPLATE_NAME = name of the template that use for the project, APPLICATION_NAME = name of the application)
 
-## Initial files
+   ```bash
+   vue init TEMPLATE_NAME APPLICATION_NAME
+   ```
 
-- node_modules = folder with the dependencies of node
-- public = folder with the public files of the project, and generate the static code of the project
-  - favicon.ico = vue icon
-  - index.html = html file in where all components are rendered
-- src = folder with the source code
-  - assets = folder with the resources of the project
-    - logo.png = image of vue
-  - components = folder with the components that make up the application
-    - HelloWorld = component example
-  - App.vue = single file component with the component example of the cli
-  - main.js = import vue and declare the instance of vue
-- .browserslistrc = configuration file
-- .eslintrc.js = eslint configurations
-- .gitignore = gitignore of git
-- babel.config.js = babel configurations
-- package.json = commands of the project and modules installed in the project
-- package-lock.json = modules installed and the version of this
+   - Enter in the folder
 
-single file component = are the files that the framework allows create for work with the html, js and css in one file, then the cli create a file that the browser can understand
+   ```bash
+   cd vue-music
+   ```
+
+   - Install the dependencies
+
+   ```bash
+   npm install
+   ```
+
+   - Run the server
+
+   ```bash
+   npm run dev
+   ```
+
+   ### initial files
+
+   - node_modules = folder with the modules of nome
+   - src = folder with the source code of the project
+     - assets = folder with the resources of the project
+       - logo.png = logo of vue
+     - App.vue = main single file component of the project
+     - main.js =
+   - .babelrc = file of the configuration of babel, transpiler of code
+   - .editorconfig = configurations of the editor
+   - .gitignore = gitignore of git
+   - index.html = main html of the application, in where the application is rendered
+   - package.json = file with the metadata of the project and the dependencies of the project
+   - package-lock.json = modules installed and the version of this
+   - Readme.md = readme of the project
+   - webpack.config.js = file of configuration of webpack
+
+2. Form two
+
+   - Create the project with
+
+   ```bash
+   vue create PROJECT_NAME
+   ```
+
+   - Enter in the folder
+
+   ```bash
+   cd PROJECT_NAME
+   ```
+
+   - To run the project execute
+
+   ```bash
+   npm run serve
+   ```
+
+   ### Initial files
+
+   - node_modules = folder with the dependencies of node
+   - public = folder with the public files of the project, and generate the static code of the project
+     - favicon.ico = vue icon
+     - index.html = html file in where all components are rendered
+   - src = folder with the source code
+     - assets = folder with the resources of the project
+       - logo.png = image of vue
+     - components = folder with the components that make up the application
+       - HelloWorld = component example
+     - App.vue = single file component with the component example of the cli
+     - main.js = import vue and declare the instance of vue
+   - .browserslistrc = configuration file
+   - .eslintrc.js = eslint configurations
+   - .gitignore = gitignore of git
+   - babel.config.js = babel configurations
+   - package.json = commands of the project and modules installed in the project
+   - package-lock.json = modules installed and the version of this
+
+   single file component = are the files that the framework allows create for work with the html, js and css in one file, then the cli create a file that the browser can understand
 
 ## User interface of vue cli
 
